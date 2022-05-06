@@ -93,7 +93,7 @@ const Drawer = styled(MuiDrawer, {
 const mdTheme = createTheme();
 
 function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -134,7 +134,7 @@ function DashboardContent() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <UserProfile/>
+            <UserProfile />
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -154,7 +154,7 @@ function DashboardContent() {
           <List component="nav">
             {mainListItems}
 
-            <SystemUsers/>
+            <SystemUsers />
 
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}

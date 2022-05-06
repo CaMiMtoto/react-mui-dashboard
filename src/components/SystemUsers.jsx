@@ -11,8 +11,6 @@ import {
   Circle,
   ExpandLess,
   ExpandMore,
-  Inbox,
-  StarBorder,
 } from "@mui/icons-material";
 
 const SystemUsers = () => {
