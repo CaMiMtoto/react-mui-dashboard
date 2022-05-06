@@ -3,13 +3,40 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Orders from './pages/Orders';
+import Customers from './pages/Customers';
+import Dashboard from './pages/Dashboard';
+import { Alert, AlertTitle } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="customers" element={<Customers />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+
+                <Alert variant="filled" severity="error">
+                  <AlertTitle>Error</AlertTitle>
+                  Oops, this page doesn't exist yet.
+                </Alert>
+
+              </main>
+            }
+          />
+        </Route>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
